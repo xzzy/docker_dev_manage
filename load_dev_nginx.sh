@@ -27,7 +27,7 @@ then
       echo "Unhealthy - restarting";
       docker stop nginxserver
       docker rm nginxserver
-      docker container run --name=nginxserver --mount type=bind,source=/container-data/nginx-container/nginx-config,target=/etc/webconfs/nginx/ --mount type=bind,source=/container-data/nginx-container/letsencrypt-config,target=/etc/letsencrypt --mount type=bind,source=/container-data/nginx-container/web/,target=/var/web/ -p 80:80  -p 443:443 -d -i -t digitalreachinsight/nginx-ubuntu-docker:1.0.5
+      docker container run --name=nginxserver --mount type=bind,source=/container-data/nginx-container/nginx-config,target=/etc/webconfs/nginx/ --mount type=bind,source=/container-data/nginx-container/letsencrypt-config,target=/etc/letsencrypt --mount type=bind,source=/container-data/nginx-container/web/,target=/var/web/ -p 80:80  -p 443:443 -d -i -t digitalreachinsight/nginx-ubuntu-docker:latest
    fi
 fi
 if [ $unhealthycount -eq 0 ]
